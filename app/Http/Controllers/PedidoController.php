@@ -39,7 +39,7 @@ class PedidoController extends Controller
             'tipo' => 'required|exists:tipos_medicamentos,id',
             'cantidad' => 'required|integer|min:1',
             'distribuidor' => 'required|exists:distribuidores,id',
-            'sucursal' => 'required|array|max:1',
+            'sucursal' => 'required|array',
             'sucursal.*' => 'exists:sucursales,id',
         ]);
         $distribuidor = Distribuidores::find(id: $request->distribuidor);
